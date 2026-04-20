@@ -1,0 +1,38 @@
+{
+  "name": "kitty-tutor",
+  "version": "0.1.0",
+  "description": "Desktop AI pet for elementary education (text chat + knowledge DB)",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron .",
+    "android:www": "node scripts/build-android-www.js",
+    "android:sync": "npx cap sync android",
+    "android:open": "npx cap open android",
+    "android:build": "npm run android:www && npm run android:sync",
+    "android:apk:debug": "npm run android:build && cd android && gradlew.bat assembleDebug",
+    "android:run": "npm run android:build && npx cap run android",
+    "build:pet3d": "npx esbuild src/renderer/pet3d.js --bundle --format=iife --platform=browser --outfile=src/renderer/pet3d.bundle.js --legal-comments=none",
+    "www:serve": "npm run android:www && npx --yes serve mobile/www -l 8765"
+  },
+  "keywords": [
+    "electron",
+    "education",
+    "ai-pet"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "@capacitor/android": "^6.2.1",
+    "@capacitor/app": "^6.0.3",
+    "@capacitor/cli": "^6.2.1",
+    "@capacitor/core": "^6.2.1",
+    "@capacitor/filesystem": "^6.0.4",
+    "@capacitor/preferences": "^6.0.4",
+    "electron": "^33.2.0"
+  },
+  "dependencies": {
+    "@capacitor/camera": "^6.1.3",
+    "electron-store": "^8.2.0",
+    "sql.js": "^1.12.0",
+    "three": "^0.183.2"
+  }
+}

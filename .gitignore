@@ -1,0 +1,8 @@
+node_modules/
+# Local JDK directory junction (Windows); JAVA_HOME workaround when JDK is on drive root
+vendor/jdk17/
+android/local.properties
+out/
+dist/
+*.log
+.DS_Store

@@ -1,0 +1,11 @@
+{
+  "appId": "com.kittytutor.app",
+  "appName": "小猫老师",
+  "webDir": "mobile/www",
+  "android": {
+    "allowMixedContent": false
+  },
+  "server": {
+    "androidScheme": "https"
+  }
+}
